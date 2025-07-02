@@ -15,19 +15,24 @@ Say you're browsing a page on www.wikipedia.org. In general, will the following 
 
 Scroll down to see the answers...
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 Here we go! There are possible exceptions, but in general the following will be true:
 
