@@ -22,6 +22,7 @@ const friends = [
 server.on("request", (req, res) => {
   const items = req.url.split("/");
   // /friends/2 => ["", "friends", "2"]
+  // /friends/ => ["", "friends", ""]
 
   if (req.method === "POST" && items[1] === "friends") {
     req.on("data", (data) => {
@@ -29,6 +30,7 @@ server.on("request", (req, res) => {
       console.log("Request:", friend);
       friends.push(JSON.parse(friend));
     });
+    req.pipe(res);
   } else if (req.method === "GET" && items[1] === "friends") {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
@@ -59,7 +61,10 @@ server.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`);
 }); //127.0.0.1 => localhost
 
+// Example of a POST request to add a new friend
 // fetch("http://localhost:3000/friends", {
 //   method: "POST",
-//   body: JSON.stringify({id: 3, name: "Ryan Dahl"})
-// });
+//   body: JSON.stringify({ id: 3, name: "Grace Hopper" })
+// })
+// .then((response) => response.json())
+// .then((friend) => console.log(friend));
